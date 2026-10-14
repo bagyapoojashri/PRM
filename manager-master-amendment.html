@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        PRM - Manager Master Amendment
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="manager-master-amendment-style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="page-container">
+
+
+    <!-- ================================= -->
+    <!-- HEADER -->
+    <!-- ================================= -->
+
+    <header class="page-header">
+
+        <div>
+
+            <h1>
+                PATHEMATIC
+            </h1>
+
+            <h2>
+                RESIDENCE MANAGEMENT
+            </h2>
+
+            <p>
+                PRM - Manager Master Amendment
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            onclick="goBackToDashboard()"
+            class="dashboard-button"
+        >
+
+            ← Dashboard
+
+        </button>
+
+    </header>
+
+
+
+    <!-- ================================= -->
+    <!-- MANAGER INFORMATION -->
+    <!-- ================================= -->
+
+    <section class="manager-info">
+
+
+        <div>
+
+            <span>
+                Manager ID
+            </span>
+
+            <strong id="managerId">
+                -
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                Apartment Management ID
+            </span>
+
+            <strong id="apartmentManagementId">
+                -
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                Apartment
+            </span>
+
+            <strong id="apartmentName">
+                -
+            </strong>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================================= -->
+    <!-- INFORMATION -->
+    <!-- ================================= -->
+
+    <section class="info-box">
+
+        <h2>
+            🔐 Master Amendment
+        </h2>
+
+        <p>
+            You can amend master information only
+            for your assigned apartment.
+        </p>
+
+        <p class="warning-text">
+
+            ⚠ Apartment ID, Flat ID and other
+            system identifiers cannot be changed.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- ================================= -->
+    <!-- APARTMENT MASTER -->
+    <!-- ================================= -->
+
+    <section class="master-section">
+
+        <div class="section-title">
+
+            <h2>
+                🏢 Apartment Master
+            </h2>
+
+            <p>
+                Amend apartment contact and address details.
+            </p>
+
+        </div>
+
+        
+<div class="amendment-excel-actions">
+    <button type="button"
+        onclick="downloadAmendmentExcel('apartment')">
+        📥 Download Excel
+    </button>
+
+    <label class="excel-upload-btn">
+        📤 Upload Excel
+        <input type="file" accept=".xlsx,.xls"
+            onchange="uploadAmendmentExcel(event, 'apartment')" hidden>
+    </label>
+</div>
+
+
+        <div
+            id="apartmentEditor"
+            class="editor-container"
+        ></div>
+
+    </section>
+
+
+
+    <!-- ================================= -->
+    <!-- FLAT MASTER -->
+    <!-- ================================= -->
+
+    <section class="master-section">
+
+        <div class="section-title">
+
+            <h2>
+                🏠 Flat Master
+            </h2>
+
+            <p>
+                Amend flat-related information
+                for your apartment.
+            </p>
+
+        </div>
+
+
+<div class="amendment-excel-actions">
+    <button type="button"
+        onclick="downloadAmendmentExcel('flat')">
+        📥 Download Excel
+    </button>
+
+    <label class="excel-upload-btn">
+        📤 Upload Excel
+        <input type="file" accept=".xlsx,.xls"
+            onchange="uploadAmendmentExcel(event, 'flat')" hidden>
+    </label>
+</div>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Flat No
+                        </th>
+
+                        <th>
+                            Block
+                        </th>
+
+                        <th>
+                            Floor
+                        </th>
+
+                        <th>
+                            Flat Type
+                        </th>
+
+                        <th>
+                            Area
+                        </th>
+
+                        <th>
+                            Parking
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody
+                    id="flatAmendmentTable"
+                ></tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================= -->
+    <!-- RESIDENT MASTER -->
+    <!-- ================================= -->
+
+    <section class="master-section">
+
+        <div class="section-title">
+
+            <h2>
+                👤 Resident Master
+            </h2>
+
+            <p>
+                Amend resident contact information
+                for your apartment.
+            </p>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Flat
+                        </th>
+
+                        <th>
+                            Resident
+                        </th>
+
+                        <th>
+                            Type
+                        </th>
+
+                        <th>
+                            Mobile
+                        </th>
+
+                        <th>
+                            Email
+                        </th>
+
+                        <th>
+                            Move In
+                        </th>
+
+                        <th>
+                            Move Out
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+<div class="amendment-excel-actions">
+    <button type="button"
+        onclick="downloadAmendmentExcel('resident')">
+        📥 Download Excel
+    </button>
+
+    <label class="excel-upload-btn">
+        📤 Upload Excel
+        <input type="file" accept=".xlsx,.xls"
+            onchange="uploadAmendmentExcel(event, 'resident')" hidden>
+    </label>
+</div>
+
+                <tbody
+                    id="residentAmendmentTable"
+                ></tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================= -->
+    <!-- MAINTENANCE MASTER -->
+    <!-- ================================= -->
+
+    <section class="master-section">
+
+        <div class="section-title">
+
+            <h2>
+                💰 Maintenance Master
+            </h2>
+
+            <p>
+                Amend maintenance and other applicable
+                charges for your apartment.
+            </p>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Flat
+                        </th>
+
+                        <th>
+                            Resident
+                        </th>
+
+                        <th>
+                            Maintenance
+                        </th>
+
+                        <th>
+                            Other Charges
+                        </th>
+
+                        <th>
+                            Total
+                        </th>
+
+                        <th>
+                            Effective From
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                
+<div class="amendment-excel-actions">
+    <button type="button"
+        onclick="downloadAmendmentExcel('maintenance')">
+        📥 Download Excel
+    </button>
+
+    <label class="excel-upload-btn">
+        📤 Upload Excel
+        <input type="file" accept=".xlsx,.xls"
+            onchange="uploadAmendmentExcel(event, 'maintenance')" hidden>
+    </label>
+</div>
+
+
+                <tbody
+                    id="maintenanceAmendmentTable"
+                ></tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+</div>
+
+
+
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+<script src="manager-master-amendment.js"></script>
+
+
+</body>
+
+</html>

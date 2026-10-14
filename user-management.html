@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PRM - User Management</title>
+
+    <link rel="stylesheet" href="user-management-style.css">
+    
+
+</head>
+
+<body>
+
+    <div class="user-management">
+
+        <h1>PRM</h1>
+
+        <h2>User Management</h2>
+
+        <p>Manage Apartment Manager Access</p>
+
+
+        <!-- ADD MANAGER FORM -->
+
+        <div class="user-form">
+
+            <h3>Add / Edit Manager</h3>
+
+            <label>Manager Name</label>
+
+            <input
+                type="text"
+                id="managerName"
+                placeholder="Enter Manager Name"
+            >
+
+
+            <label>Username</label>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter Username"
+            >
+
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter Password"
+            >
+
+
+            <label>Apartment Name</label>
+
+            <input
+                type="text"
+                id="apartment"
+                placeholder="Enter Apartment Name"
+            >
+
+
+            <label>Apartment ID</label>
+
+            <input
+                type="text"
+                id="apartmentId"
+                placeholder="Example: APT001"
+            >
+
+
+            <label>Status</label>
+
+            <select id="status">
+
+                <option value="ACTIVE">
+                    ACTIVE
+                </option>
+
+                <option value="INACTIVE">
+                    INACTIVE
+                </option>
+
+            </select>
+
+
+            <button onclick="addUser()">
+                SAVE MANAGER
+            </button>
+
+        </div>
+
+
+        <!-- USER TABLE -->
+
+        <div class="user-list">
+
+            <h3>Manager Access List</h3>
+            
+            <div style="margin: 15px 0;">
+    <button
+        type="button"
+        onclick="downloadAllManagers()"
+        style="
+            background:#198754;
+            color:white;
+            border:none;
+            padding:10px 18px;
+            border-radius:5px;
+            cursor:pointer;
+            font-weight:bold;
+        ">
+        📥 DOWNLOAD ALL MANAGERS
+    </button>
+</div>
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Manager</th>
+
+                        <th>Username</th>
+
+                        <th>Password</th>
+
+                        <th>Apartment</th>
+
+                        <th>Status</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="userTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <br>
+
+        <button onclick="window.location.href='admin-dashboard.html'">
+            ← Back to Admin Dashboard
+        </button>
+
+    </div>
+
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+    <script src="user-management.js"></script>
+    
+</body>
+
+</html>

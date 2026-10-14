@@ -1,0 +1,42 @@
+body {
+   font-family: 'Times New Roman', Times, serif;
+   background-image: url("Background Image.png");
+   background-size: cover;
+   background-position: right;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 400px;
+    margin: 150px auto;
+    background-color:green;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+h1 {
+    color: antiquewhite;
+    font-size: 50px;
+    margin-bottom: 5px;
+}
+
+h2 {
+    color: antiquewhite;
+    margin-top: 5px;
+}
+
+p {
+    font-style: italic;
+    color:white;
+    margin-bottom: 30px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}

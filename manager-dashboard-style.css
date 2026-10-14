@@ -1,0 +1,385 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    min-height: 100vh;
+
+    background-image:
+        url("Background Image.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+}
+
+
+.dashboard-container {
+
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 20px;
+
+}
+
+
+/* HEADER */
+
+.dashboard-header {
+
+    background:
+        rgba(255,255,255,0.95);
+
+    border-radius: 15px;
+
+    padding: 18px 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,0.15);
+
+}
+
+
+.brand-section h1 {
+
+    margin: 0;
+
+    font-size: 28px;
+
+    color: #172554;
+
+    letter-spacing: 2px;
+
+}
+
+
+.brand-section h2 {
+
+    margin: 3px 0;
+
+    font-size: 20px;
+
+    color: #334155;
+
+}
+
+
+.brand-section p {
+
+    margin: 5px 0 0;
+
+    color: #64748b;
+
+}
+
+
+.logout-button {
+
+    background: #b91c1c;
+
+    color: white;
+
+    border: none;
+
+    padding: 13px 22px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+/* MANAGER INFORMATION */
+
+.manager-info-card {
+
+    margin-top: 18px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.info-box {
+
+    background:
+        rgba(255,255,255,0.95);
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.12);
+
+}
+
+
+.info-box span {
+
+    display: block;
+
+    font-size: 13px;
+
+    color: #64748b;
+
+    margin-bottom: 7px;
+
+}
+
+
+.info-box strong {
+
+    font-size: 16px;
+
+    color: #172554;
+
+}
+
+
+/* WELCOME */
+
+.welcome-section {
+
+    background:
+        rgba(255,255,255,0.95);
+
+    margin-top: 18px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+}
+
+
+.welcome-section h2 {
+
+    margin: 0 0 5px;
+
+    color: #172554;
+
+}
+
+
+.welcome-section p {
+
+    margin: 0;
+
+    color: #64748b;
+
+}
+
+
+/* ACCESS */
+
+.access-section {
+
+    margin-top: 18px;
+
+}
+
+
+.section-title {
+
+    background:
+        rgba(255,255,255,0.95);
+
+    padding: 15px 20px;
+
+    border-radius: 12px 12px 0 0;
+
+}
+
+
+.section-title h2 {
+
+    margin: 0;
+
+    color: #172554;
+
+}
+
+
+.section-title p {
+
+    margin: 5px 0 0;
+
+    color: #64748b;
+
+}
+
+
+.access-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 15px;
+
+}
+
+
+.access-card {
+
+    background:
+        rgba(255,255,255,0.96);
+
+    padding: 25px 18px;
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 18px
+        rgba(0,0,0,0.13);
+
+}
+
+
+.access-icon {
+
+    font-size: 42px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.access-card h3 {
+
+    color: #172554;
+
+    margin: 8px 0;
+
+}
+
+
+.access-card p {
+
+    color: #64748b;
+
+    min-height: 55px;
+
+    line-height: 1.4;
+
+    font-size: 14px;
+
+}
+
+
+.access-card button {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #1d4ed8;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.access-card button:hover {
+
+    background: #1e40af;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px) {
+
+    .manager-info-card {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .access-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media(max-width:550px) {
+
+    .dashboard-header {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+
+    }
+
+
+    .manager-info-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .access-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}

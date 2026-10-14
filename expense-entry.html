@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PRM - Expense Entry</title>
+
+    <link rel="stylesheet" href="expense-entry-style.css">
+</head>
+
+<body>
+
+<div class="page-container">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="page-header">
+
+        <div>
+            <h1>PATHEMATIC</h1>
+            <h2>RESIDENCE MANAGEMENT</h2>
+            <p>PRM - Expense Entry</p>
+            <p id="apartmentAddressDisplay">
+    -
+</p>
+        </div>
+
+        <button type="button" onclick="goDashboard()">
+            ⬅ Dashboard
+        </button>
+
+    </header>
+
+
+    <!-- ================= MANAGER INFORMATION ================= -->
+
+    <section class="manager-info">
+
+        <div>
+            <span>Manager ID</span>
+            <strong id="managerId">-</strong>
+        </div>
+
+        <div>
+            <span>Apartment Management ID</span>
+            <strong id="apartmentIdDisplay">-</strong>
+        </div>
+
+        <div>
+            <span>Apartment</span>
+            <strong id="apartmentNameDisplay">-</strong>
+        </div>
+
+    </section>
+
+
+    <!-- ================= EXPENSE FORM ================= -->
+
+    <section class="form-card">
+
+        <h2 id="formTitle">
+            Expense Entry
+        </h2>
+
+
+        <form id="expenseForm">
+
+            <div class="form-grid">
+
+                <!-- DATE -->
+
+                <div class="field">
+
+                    <label for="entryDate">
+                        Expense Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="entryDate"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CATEGORY -->
+
+                <div class="field">
+
+                    <label for="expenseCategory">
+                        Expense Category
+                    </label>
+
+                    <select
+                        id="expenseCategory"
+                        required
+                    >
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                    </select>
+
+                </div>
+
+                
+<!-- BILL UPLOAD -->
+<div class="field">
+    <label for="billUpload">Upload Bill / Invoice</label>
+    <input
+        type="file"
+        id="billUpload"
+        accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+    >
+    <small>Accepted formats: PDF, JPG, JPEG, PNG. Maximum 2 MB.</small>
+</div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="field full">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <input
+                        type="text"
+                        id="description"
+                        placeholder="Enter expense description"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- AMOUNT -->
+
+                <div class="field">
+
+                    <label for="amount">
+                        Amount
+                    </label>
+
+                    <input
+                        type="number"
+                        id="amount"
+                        min="0"
+                        step="0.01"
+                        placeholder="Enter amount"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PAYMENT MODE -->
+
+                <div class="field">
+
+                    <label for="paymentMode">
+                        Payment Mode
+                    </label>
+
+                    <select
+                        id="paymentMode"
+                        required
+                    >
+
+                        <option value="">
+                            Select Payment Mode
+                        </option>
+
+                        <option value="CASH">
+                            Cash
+                        </option>
+
+                        <option value="BANK">
+                            Bank
+                        </option>
+
+                        <option value="UPI">
+                            UPI
+                        </option>
+
+                        <option value="CHEQUE">
+                            Cheque
+                        </option>
+
+                        <option value="OTHER">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- REFERENCE -->
+
+                <div class="field">
+
+                    <label for="referenceNo">
+                        Reference No.
+                    </label>
+
+                    <input
+                        type="text"
+                        id="referenceNo"
+                        placeholder="Cheque / UTR / Bill No."
+                    >
+
+                </div>
+
+
+                <!-- REMARKS -->
+
+                <div class="field">
+
+                    <label for="remarks">
+                        Remarks
+                    </label>
+
+                    <input
+                        type="text"
+                        id="remarks"
+                        placeholder="Optional remarks"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="button-row">
+
+                <button
+                    type="submit"
+                    class="save-btn"
+                    id="saveExpenseButton"
+                >
+                    SAVE EXPENSE
+                </button>
+
+
+                <button
+                    type="button"
+                    class="clear-btn"
+                    onclick="clearExpenseForm()"
+                >
+                    CLEAR
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- ================= HISTORY ================= -->
+
+    <section class="history-card">
+
+        <div class="history-header">
+
+            <div>
+
+                <h2>
+                    Expense History
+                </h2>
+
+                <p>
+                    Expenses recorded for your assigned apartment
+                </p>
+
+            </div>
+
+
+            <div class="excel-actions">
+
+                <button
+                    type="button"
+                    onclick="downloadExpenseExcel()"
+                >
+                    📥 Download Excel
+                </button>
+
+
+                <label class="upload-button">
+
+                    📤 Upload Excel
+
+                    <input
+                        type="file"
+                        accept=".xlsx,.xls"
+                        onchange="uploadExpenseExcel(event)"
+                        hidden
+                    >
+
+                </label>
+
+
+                <button
+                    type="button"
+                    onclick="window.print()"
+                >
+                    🖨 Print
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <input
+            class="search"
+            id="historySearch"
+            placeholder="Search expense..."
+            oninput="displayExpenseHistory()"
+        >
+
+
+        <!-- TABLE -->
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>S.No</th>
+                        <th>Expense ID</th>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Payment</th>
+                        <th>Reference</th>
+                        <th>Entered By</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="expenseHistoryBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div
+            id="emptyHistory"
+            class="empty-message"
+        >
+            No expense entries found.
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- ================= EXCEL LIBRARY ================= -->
+
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="expense-entry.js"></script>
+
+</body>
+
+</html>

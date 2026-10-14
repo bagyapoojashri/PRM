@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PRM - Resident Master</title>
+
+    <link rel="stylesheet"
+          href="resident-master-style.css">
+          <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+
+</head>
+
+
+<body>
+
+    <div class="resident-container">
+
+
+        <!-- HEADER -->
+
+        <div class="page-header">
+
+            <h1>PRM</h1>
+
+            <h2>Resident Master</h2>
+
+            <p>
+                Pathematic Residence Management
+            </p>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <div class="form-section">
+
+            <h3>Resident Details</h3>
+
+
+            <div class="form-grid">
+
+
+                <!-- APARTMENT -->
+
+                <div class="form-group">
+
+                    <label for="apartmentId">
+                        Apartment
+                    </label>
+
+                    <select id="apartmentId"
+                            onchange="loadFlats()">
+
+                        <option value="">
+                            Select Apartment
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- FLAT -->
+
+                <div class="form-group">
+
+                    <label for="flatId">
+                        Flat Number
+                    </label>
+
+                    <select id="flatId">
+
+                        <option value="">
+                            Select Flat
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- RESIDENT NAME -->
+
+                <div class="form-group">
+
+                    <label for="residentName">
+                        Resident Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="residentName"
+                        placeholder="Enter Resident Name"
+                    >
+
+                </div>
+
+
+                <!-- RESIDENT TYPE -->
+
+                <div class="form-group">
+
+                    <label for="residentType">
+                        Resident Type
+                    </label>
+
+                    <select id="residentType">
+
+                        <option value="">
+                            Select Type
+                        </option>
+
+                        <option value="OWNER">
+                            Owner
+                        </option>
+
+                        <option value="TENANT">
+                            Tenant
+                        </option>
+
+                        <option value="OCCUPANT">
+                            Occupant
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- MOBILE -->
+
+                <div class="form-group">
+
+                    <label for="mobile">
+                        Mobile Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        maxlength="10"
+                        placeholder="Enter Mobile Number"
+                    >
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter Email"
+                    >
+
+                </div>
+
+
+                <!-- MOVE IN DATE -->
+
+                <div class="form-group">
+
+                    <label for="moveInDate">
+                        Move-in Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="moveInDate"
+                    >
+
+                </div>
+
+
+                <!-- MOVE OUT DATE -->
+
+                <div class="form-group">
+
+                    <label for="moveOutDate">
+                        Move-out Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="moveOutDate"
+                    >
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="form-group">
+
+                    <label for="status">
+                        Status
+                    </label>
+
+                    <select id="status">
+
+                        <option value="ACTIVE">
+                            ACTIVE
+                        </option>
+
+                        <option value="INACTIVE">
+                            INACTIVE
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="button-area">
+
+                <button
+                    class="save-btn"
+                    onclick="saveResident()">
+
+                    SAVE RESIDENT
+
+                </button>
+
+
+                <button
+                    class="clear-btn"
+                    onclick="clearForm()">
+
+                    CLEAR
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESIDENT LIST -->
+
+        
+<div class="excel-actions">
+    <button
+        type="button"
+        onclick="downloadResidentExcel()">
+        📥 Download Excel
+    </button>
+
+    <label class="upload-button">
+        📤 Upload Excel
+        <input
+            type="file"
+            accept=".xlsx,.xls"
+            onchange="uploadResidentExcel(event)"
+            hidden
+        >
+    </label>
+</div>
+
+
+            <h3>Resident List</h3>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Apartment</th>
+
+                        <th>Flat</th>
+
+                        <th>Resident</th>
+
+                        <th>Type</th>
+
+                        <th>Mobile</th>
+
+                        <th>Move-in</th>
+
+                        <th>Status</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="residentTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- BOTTOM BUTTONS -->
+
+        <div class="bottom-buttons">
+
+            <button
+                onclick="window.location.href='masters.html'">
+
+                ← Back to Masters
+
+            </button>
+
+
+            <button
+                onclick="window.location.href='admin-dashboard.html'">
+
+                Admin Dashboard
+
+            </button>
+
+        </div>
+
+
+    </div>
+     <script src="prm-excel.js"></script>
+    <script src="resident-master.js"></script>
+
+</body>
+
+</html>

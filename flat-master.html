@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PRM - Flat Master</title>
+
+    <link rel="stylesheet"
+          href="flat-master-style.css">
+          <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+
+</head>
+
+
+<body>
+
+    <div class="flat-container">
+
+
+        <!-- HEADER -->
+
+        <div class="page-header">
+
+            <h1>PRM</h1>
+
+            <h2>Flat Master</h2>
+
+            <p>
+                Pathematic Residence Management
+            </p>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <div class="form-section">
+
+            <h3>Flat Details</h3>
+
+
+            <div class="form-grid">
+
+
+                <!-- APARTMENT -->
+
+                <div class="form-group">
+
+                    <label for="apartmentId">
+
+                        Apartment
+
+                    </label>
+
+                    <select id="apartmentId">
+
+                        <option value="">
+                            Select Apartment
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- BLOCK -->
+
+                <div class="form-group">
+
+                    <label for="block">
+
+                        Block
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="block"
+                        placeholder="Example: A"
+                    >
+
+                </div>
+
+
+                <!-- FLAT NUMBER -->
+
+                <div class="form-group">
+
+                    <label for="flatNumber">
+
+                        Flat Number
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="flatNumber"
+                        placeholder="Example: A101"
+                    >
+
+                </div>
+
+
+                <!-- FLOOR -->
+
+                <div class="form-group">
+
+                    <label for="floor">
+
+                        Floor
+
+                    </label>
+
+                    <input
+                        type="number"
+                        id="floor"
+                        placeholder="Example: 1"
+                    >
+
+                </div>
+
+
+                <!-- FLAT TYPE -->
+
+                <div class="form-group">
+
+                    <label for="flatType">
+
+                        Flat Type
+
+                    </label>
+
+                    <select id="flatType">
+
+                        <option value="">
+                            Select Type
+                        </option>
+
+                        <option value="1BHK">
+                            1 BHK
+                        </option>
+
+                        <option value="2BHK">
+                            2 BHK
+                        </option>
+
+                        <option value="3BHK">
+                            3 BHK
+                        </option>
+
+                        <option value="4BHK">
+                            4 BHK
+                        </option>
+
+                        <option value="Penthouse">
+                            Penthouse
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- AREA -->
+
+                <div class="form-group">
+
+                    <label for="area">
+
+                        Area (Sq.Ft.)
+
+                    </label>
+
+                    <input
+                        type="number"
+                        id="area"
+                        placeholder="Example: 1050"
+                    >
+
+                </div>
+
+
+                <!-- PARKING -->
+
+                <div class="form-group">
+
+                    <label for="parking">
+
+                        Parking
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="parking"
+                        placeholder="Example: P-101"
+                    >
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="form-group">
+
+                    <label for="status">
+
+                        Status
+
+                    </label>
+
+                    <select id="status">
+
+                        <option value="ACTIVE">
+                            ACTIVE
+                        </option>
+
+                        <option value="INACTIVE">
+                            INACTIVE
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="button-area">
+
+                <button
+                    class="save-btn"
+                    onclick="saveFlat()">
+
+                    SAVE FLAT
+
+                </button>
+
+
+                <button
+                    class="clear-btn"
+                    onclick="clearForm()">
+
+                    CLEAR
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- FLAT LIST -->
+
+        <div class="list-section">
+            <div class="excel-actions">
+
+    <button
+    type="button"
+    onclick="downloadFlatExcel()"
+>
+    📥 Download Excel
+</button>
+
+
+<label class="upload-button">
+
+    📤 Upload Excel
+
+    <input
+        type="file"
+        accept=".xlsx,.xls"
+        onchange="uploadFlatExcel(event)"
+        hidden
+    >
+
+</label>
+</div>
+
+            <h3>Flat List</h3>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Apartment</th>
+
+                        <th>Block</th>
+
+                        <th>Flat</th>
+
+                        <th>Floor</th>
+
+                        <th>Type</th>
+
+                        <th>Area</th>
+
+                        <th>Status</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="flatTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- BOTTOM -->
+
+        <div class="bottom-buttons">
+
+            <button
+                onclick="window.location.href='masters.html'">
+
+                ← Back to Masters
+
+            </button>
+
+
+            <button
+                onclick="window.location.href='admin-dashboard.html'">
+
+                Admin Dashboard
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+     <script src="prm-excel.js"></script>
+
+     <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+
+    <script src="flat-master.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,464 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            rgba(245, 248, 252, 0.92),
+            rgba(245, 248, 252, 0.92)
+        );
+
+    color: #12345b;
+
+}
+
+
+.page-container {
+
+    width: 94%;
+
+    max-width: 1400px;
+
+    margin: 25px auto;
+
+}
+
+
+/* ================================= */
+/* HEADER */
+/* ================================= */
+
+.page-header {
+
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,0.08);
+
+}
+
+
+.page-header h1 {
+
+    margin: 0;
+
+    font-size: 28px;
+
+}
+
+
+.page-header h2 {
+
+    margin: 3px 0;
+
+    font-size: 20px;
+
+}
+
+
+.page-header p {
+
+    margin: 5px 0 0;
+
+    color: #50709a;
+
+}
+
+
+.dashboard-button {
+
+    background: #555;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+}
+
+
+/* ================================= */
+/* MANAGER INFO */
+/* ================================= */
+
+.manager-info {
+
+    margin-top: 18px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.manager-info > div {
+
+    background: white;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.06);
+
+}
+
+
+.manager-info span {
+
+    display: block;
+
+    font-size: 13px;
+
+    color: #527092;
+
+    margin-bottom: 7px;
+
+}
+
+
+.manager-info strong {
+
+    font-size: 17px;
+
+}
+
+
+/* ================================= */
+/* INFORMATION */
+/* ================================= */
+
+.info-box {
+
+    background: white;
+
+    margin-top: 18px;
+
+    padding: 22px;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.06);
+
+}
+
+
+.info-box h2 {
+
+    margin-top: 0;
+
+}
+
+
+.warning-text {
+
+    color: #a45b00;
+
+    font-weight: bold;
+
+}
+
+
+/* ================================= */
+/* MASTER SECTION */
+/* ================================= */
+
+.master-section {
+
+    background: white;
+
+    margin-top: 20px;
+
+    padding: 22px;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.06);
+
+}
+
+
+.section-title h2 {
+
+    margin: 0;
+
+}
+
+
+.section-title p {
+
+    color: #607b9c;
+
+}
+
+
+/* ================================= */
+/* FORM */
+/* ================================= */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.form-group label {
+
+    margin-bottom: 6px;
+
+    font-weight: bold;
+
+}
+
+
+.form-group input {
+
+    padding: 11px;
+
+    border:
+        1px solid #cbd5e1;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+}
+
+
+.form-group input:focus {
+
+    outline: none;
+
+    border-color: #1264c7;
+
+}
+
+
+/* ================================= */
+/* BUTTONS */
+/* ================================= */
+
+.form-actions {
+
+    margin-top: 20px;
+
+}
+
+
+.save-button {
+
+    background: #1264c7;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 22px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+}
+
+
+.edit-btn {
+
+    background: #1264c7;
+
+    color: white;
+
+    border: none;
+
+    padding: 7px 12px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+}
+
+
+.edit-btn:hover,
+.save-button:hover,
+.dashboard-button:hover {
+
+    opacity: 0.9;
+
+}
+
+
+/* ================================= */
+/* TABLE */
+/* ================================= */
+
+.table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse:
+        collapse;
+
+    margin-top: 15px;
+
+}
+
+
+th {
+
+    background: #1264c7;
+
+    color: white;
+
+    padding: 12px;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+}
+
+
+td {
+
+    padding: 11px;
+
+    border-bottom:
+        1px solid #e2e8f0;
+
+    white-space: nowrap;
+
+}
+
+
+tr:hover {
+
+    background: #f7faff;
+
+}
+
+
+/* ================================= */
+/* MOBILE */
+/* ================================= */
+
+@media
+(max-width: 900px) {
+
+    .manager-info {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .page-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+}
+
+
+/* Excel upload and download buttons */
+.amendment-excel-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0 16px;
+}
+
+.amendment-excel-actions button,
+.excel-upload-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #0878d1, #0055a5);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.amendment-excel-actions button:hover,
+.excel-upload-btn:hover {
+    opacity: 0.9;
+}

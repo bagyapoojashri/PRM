@@ -1,0 +1,708 @@
+/* ========================================
+   PRM - OTHER ENTRY
+   MODERN COLOURFUL DESIGN
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #17365d;
+
+    background:
+        linear-gradient(
+            rgba(245, 249, 255, 0.88),
+            rgba(235, 244, 255, 0.88)
+        ),
+        url("Background Image.png")
+        center / cover fixed no-repeat;
+}
+
+
+/* ========================================
+   PAGE CONTAINER
+======================================== */
+
+.page-container {
+    width: 95%;
+    max-width: 1500px;
+    margin: 25px auto;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.page-header {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #eef6ff
+        );
+
+    border-radius: 20px;
+
+    padding: 25px 32px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-left: 7px solid #0878d1;
+
+    box-shadow:
+        0 8px 25px rgba(0, 76, 153, 0.15);
+}
+
+.page-header h1 {
+    margin: 0;
+
+    font-size: 36px;
+
+    color: #063b78;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+}
+
+.page-header h2 {
+    margin: 2px 0;
+
+    font-size: 25px;
+
+    color: #0878d1;
+}
+
+.page-header p {
+    margin: 7px 0 0;
+
+    color: #607d9c;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+.page-header button {
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 12px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0878d1,
+            #0055a5
+        );
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 4px 10px rgba(0, 91, 170, 0.25);
+
+    transition: 0.2s;
+}
+
+.page-header button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 15px rgba(0, 91, 170, 0.3);
+}
+
+
+/* ========================================
+   MANAGER INFORMATION
+======================================== */
+
+.manager-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin: 22px 0;
+}
+
+.manager-info div {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f2f8ff
+        );
+
+    border-radius: 15px;
+
+    padding: 18px 22px;
+
+    border-top: 4px solid #1685d8;
+
+    box-shadow:
+        0 5px 16px rgba(0, 76, 153, 0.12);
+}
+
+.manager-info span {
+    display: block;
+
+    color: #66809d;
+
+    margin-bottom: 7px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+.manager-info strong {
+    font-size: 20px;
+
+    color: #123f70;
+}
+
+
+/* ========================================
+   CARDS
+======================================== */
+
+.form-card,
+.history-card {
+    background:
+        rgba(255, 255, 255, 0.97);
+
+    border-radius: 18px;
+
+    padding: 27px;
+
+    margin-bottom: 24px;
+
+    box-shadow:
+        0 7px 25px rgba(0, 76, 153, 0.12);
+
+    border: 1px solid #dceafa;
+}
+
+.form-card h2,
+.history-card h2 {
+    margin-top: 0;
+
+    color: #0869c9;
+
+    font-size: 24px;
+}
+
+.form-card h2 {
+    border-left: 5px solid #f3a712;
+
+    padding-left: 12px;
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 20px 25px;
+}
+
+.field {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.field.full {
+    grid-column: 1 / -1;
+}
+
+.field label {
+    font-weight: bold;
+
+    margin-bottom: 7px;
+
+    color: #1d3557;
+
+    font-size: 14px;
+}
+
+.field input,
+.field select,
+.field textarea {
+    padding: 12px 14px;
+
+    border:
+        1px solid #c5d6e8;
+
+    border-radius: 9px;
+
+    font-size: 15px;
+
+    background: #ffffff;
+
+    color: #17365d;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    border-color: #0878d1;
+
+    box-shadow:
+        0 0 0 3px rgba(8, 120, 209, 0.12);
+}
+
+.field textarea {
+    resize: vertical;
+}
+
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.button-row {
+    margin-top: 24px;
+
+    display: flex;
+
+    gap: 12px;
+}
+
+.save-btn,
+.clear-btn {
+    border: none;
+
+    border-radius: 9px;
+
+    padding: 13px 26px;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+.save-btn {
+    background:
+        linear-gradient(
+            135deg,
+            #0878d1,
+            #0055a5
+        );
+
+    box-shadow:
+        0 4px 10px rgba(0, 91, 170, 0.25);
+}
+
+.clear-btn {
+    background:
+        linear-gradient(
+            135deg,
+            #777,
+            #555
+        );
+}
+
+.save-btn:hover,
+.clear-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   HISTORY HEADER
+======================================== */
+
+.history-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    border-bottom: 1px solid #dceafa;
+
+    padding-bottom: 15px;
+
+    margin-bottom: 15px;
+}
+
+.history-header p {
+    color: #66809d;
+
+    margin-bottom: 0;
+}
+
+
+/* ========================================
+   EXCEL ACTIONS
+======================================== */
+
+.excel-actions {
+    display: flex;
+
+    gap: 9px;
+
+    flex-wrap: wrap;
+}
+
+.excel-actions button,
+.upload-button {
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 10px 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0878d1,
+            #0055a5
+        );
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.excel-actions button:hover,
+.upload-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(0, 91, 170, 0.22);
+}
+
+.upload-button {
+    display: inline-block;
+}
+
+
+/* ========================================
+   SEARCH
+======================================== */
+
+.search {
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 15px 0 18px;
+
+    padding: 12px 15px;
+
+    border:
+        1px solid #c5d6e8;
+
+    border-radius: 9px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.search:focus {
+    border-color: #0878d1;
+
+    box-shadow:
+        0 0 0 3px rgba(8, 120, 209, 0.10);
+}
+
+
+/* ========================================
+   TABLE
+======================================== */
+
+.table-wrapper {
+    overflow-x: auto;
+
+    border-radius: 12px;
+
+    border: 1px solid #d5e4f3;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    min-width: 1150px;
+
+    background: white;
+}
+
+th {
+    background:
+        linear-gradient(
+            135deg,
+            #0878d1,
+            #0055a5
+        );
+
+    color: white;
+
+    padding: 14px 10px;
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.3px;
+
+    border: none;
+}
+
+th:first-child {
+    border-radius: 10px 0 0 0;
+}
+
+th:last-child {
+    border-radius: 0 10px 0 0;
+}
+
+td {
+    border-bottom: 1px solid #e1ebf5;
+
+    padding: 13px 9px;
+
+    text-align: center;
+
+    color: #253b53;
+
+    font-size: 14px;
+
+    background: white;
+}
+
+tbody tr:nth-child(even) td {
+    background: #f5f9fe;
+}
+
+tbody tr:hover td {
+    background: #e8f3ff;
+}
+
+
+/* ========================================
+   ACTION BUTTONS
+======================================== */
+
+.edit-btn,
+.delete-btn {
+    border: none;
+
+    padding: 7px 11px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    margin: 2px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    color: white;
+
+    transition: 0.2s;
+}
+
+.edit-btn {
+    background:
+        linear-gradient(
+            135deg,
+            #f2a900,
+            #d88900
+        );
+}
+
+.delete-btn {
+    background:
+        linear-gradient(
+            135deg,
+            #e53935,
+            #b71c1c
+        );
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ========================================
+   EMPTY MESSAGE
+======================================== */
+
+.empty-message {
+    display: none;
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #70849a;
+
+    font-size: 15px;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media(max-width: 800px) {
+
+    .page-container {
+        width: 96%;
+
+        margin: 12px auto;
+    }
+
+    .page-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .page-header h1 {
+        font-size: 28px;
+    }
+
+    .page-header h2 {
+        font-size: 21px;
+    }
+
+    .manager-info,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .field.full {
+        grid-column: auto;
+    }
+
+    .history-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .excel-actions {
+        width: 100%;
+    }
+
+    .excel-actions button,
+    .upload-button {
+        width: 100%;
+
+        text-align: center;
+    }
+}
+
+
+/* ========================================
+   PRINT
+======================================== */
+
+@media print {
+
+    body {
+        background: white;
+    }
+
+    .page-header button,
+    .form-card,
+    .manager-info,
+    .excel-actions,
+    .search,
+    .edit-btn,
+    .delete-btn {
+        display: none !important;
+    }
+
+    .page-container {
+        width: 100%;
+
+        margin: 0;
+    }
+
+    .history-card {
+        box-shadow: none;
+
+        padding: 0;
+
+        border: none;
+    }
+
+    .history-card h2 {
+        color: #000;
+    }
+
+    table {
+        min-width: 0;
+
+        font-size: 10px;
+    }
+
+    th {
+        background: #0878d1 !important;
+
+        color: white !important;
+    }
+
+    td {
+        color: #000;
+    }
+}

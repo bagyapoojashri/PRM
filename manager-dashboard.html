@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PRM - Manager Dashboard</title>
+
+    <link rel="stylesheet"
+          href="manager-dashboard-style.css">
+
+</head>
+
+
+<body>
+
+<div class="dashboard-container">
+
+
+    <!-- HEADER -->
+
+    <header class="dashboard-header">
+
+        <div class="brand-section">
+
+            <h1>PATHEMATIC</h1>
+
+            <h2>RESIDENCE MANAGEMENT</h2>
+
+            <p>PRM - Manager Dashboard</p>
+
+        </div>
+
+
+        <button id="logoutButton" type="button">
+    🚪 Logout
+</button>
+
+    </header>
+
+
+
+    <!-- MANAGER INFORMATION -->
+
+    <section class="manager-info-card">
+
+
+        <div class="info-box">
+
+            <span>Manager ID</span>
+
+            <strong id="managerId">
+                -
+            </strong>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <span>Apartment Management ID</span>
+
+            <strong id="apartmentManagementId">
+                -
+            </strong>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <span>Apartment</span>
+
+            <strong id="apartmentName">
+                -
+            </strong>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <span>Login Date & Time</span>
+
+            <strong id="loginTime">
+                -
+            </strong>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- WELCOME -->
+
+    <section class="welcome-section">
+
+        <h2 id="welcomeMessage">
+            Welcome
+        </h2>
+
+        <p>
+            Select an activity from Your Access.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================================= -->
+    <!-- YOUR ACCESS -->
+    <!-- ================================= -->
+
+    <section class="access-section">
+
+        <div class="section-title">
+
+            <h2>🔐 Your Access</h2>
+
+            <p>
+                Activities assigned by Administrator
+            </p>
+
+        </div>
+
+
+        <div class="access-grid">
+
+
+            <!-- MAINTENANCE -->
+
+            <div
+                class="access-card"
+                id="maintenanceCard">
+
+                <div class="access-icon">
+                    🧾
+                </div>
+
+                <h3>
+                    Maintenance Receipt
+                </h3>
+
+                <p>
+                    Collect maintenance and
+                    calculate outstanding balance.
+                </p>
+
+                <button
+                    onclick="openMaintenance()">
+
+                    Open Entry
+
+                </button>
+
+            </div>
+
+
+
+            <!-- EXPENSE -->
+
+            <div
+                class="access-card"
+                id="expenseCard">
+
+                <div class="access-icon">
+                    💰
+                </div>
+
+                <h3>
+                    Expense Entry
+                </h3>
+
+                <p>
+                    Record apartment expenses
+                    using Admin categories.
+                </p>
+
+                <button
+                    onclick="openExpense()">
+
+                    Open Entry
+
+                </button>
+
+            </div>
+
+
+
+            <!-- OTHER ENTRY -->
+
+            <div
+                class="access-card"
+                id="otherCard">
+
+                <div class="access-icon">
+                    📋
+                </div>
+
+                <h3>
+                    Other Entry
+                </h3>
+
+                <p>
+                    Record other income,
+                    payments and daily entries.
+                </p>
+
+                <button
+                    onclick="openOtherEntry()">
+
+                    Open Entry
+
+                </button>
+
+            </div>
+
+
+
+            <!-- MASTER AMENDMENT -->
+
+            <div
+                class="access-card"
+                id="masterCard">
+
+                <div class="access-icon">
+                    🏠
+                </div>
+
+                <h3>
+                    Master Amendment
+                </h3>
+
+                <p>
+                    Amend permitted master
+                    information.
+                </p>
+
+                <button
+                    onclick="openMaster()">
+
+                    Open
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</div>
+
+
+<script src="manager-dashboard.js"></script>
+
+</body>
+
+</html>

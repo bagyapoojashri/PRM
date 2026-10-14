@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PRM - Access Control</title>
+
+    <link rel="stylesheet"
+          href="access-control-style.css">
+
+</head>
+
+<body>
+
+<div class="access-container">
+
+
+    <!-- HEADER -->
+
+    <div class="page-header">
+
+        <h1>PRM</h1>
+
+        <h2>Access Control</h2>
+
+        <p>
+            Pathematic Residence Management
+        </p>
+
+    </div>
+
+
+    <!-- ACCESS FORM -->
+
+    <div class="form-section">
+
+        <h3>Manager Access</h3>
+
+
+        <div class="form-grid">
+
+
+            <!-- USER -->
+
+            <div class="form-group">
+
+                <label for="username">
+                    Manager
+                </label>
+
+                <select id="username">
+
+                    <option value="">
+                        Select Manager
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- APARTMENT -->
+
+            <div class="form-group">
+
+                <label for="apartmentId">
+                    Apartment
+                </label>
+
+                <select id="apartmentId">
+
+                    <option value="">
+                        Select Apartment
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- STATUS -->
+
+            <div class="form-group">
+
+                <label for="status">
+                    Access Status
+                </label>
+
+                <select id="status">
+
+                    <option value="ACTIVE">
+                        ACTIVE
+                    </option>
+
+                    <option value="INACTIVE">
+                        INACTIVE
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- MODULE ACCESS -->
+
+        <div class="permission-section">
+
+            <h3>Module Access</h3>
+
+
+            <label class="check-row">
+
+                <input
+                    type="checkbox"
+                    id="maintenanceAccess">
+
+                Maintenance Receipt
+
+            </label>
+
+
+            <label class="check-row">
+
+                <input
+                    type="checkbox"
+                    id="expenseAccess">
+
+                Expense Entry
+
+            </label>
+
+
+            <label class="check-row">
+
+                <input
+                    type="checkbox"
+                    id="otherEntryAccess">
+
+                Other / Daily Entry
+
+            </label>
+
+
+            <label class="check-row">
+
+                <input
+                    type="checkbox"
+                    id="masterAccess">
+
+                Master Amendment
+
+            </label>
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="button-area">
+
+            <button
+                class="save-btn"
+                onclick="saveAccess()">
+
+                SAVE ACCESS
+
+            </button>
+
+
+            <button
+                class="clear-btn"
+                onclick="clearForm()">
+
+                CLEAR
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ACCESS LIST -->
+
+    <div class="list-section">
+
+        <h3>Access List</h3>
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Manager</th>
+
+                    <th>Apartment</th>
+
+                    <th>Maintenance</th>
+
+                    <th>Expense</th>
+
+                    <th>Other Entry</th>
+
+                    <th>Master</th>
+
+                    <th>Status</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="accessTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- BACK BUTTONS -->
+
+    <div class="bottom-buttons">
+
+        <button
+            onclick="window.location.href='admin-dashboard.html'">
+
+            ← Admin Dashboard
+
+        </button>
+
+    </div>
+
+
+</div>
+
+
+<script src="access-control.js"></script>
+
+</body>
+
+</html>

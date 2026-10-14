@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PRM - Expense Category Master</title>
+
+    <link rel="stylesheet"
+          href="expense-category-master-style.css">
+
+</head>
+
+<body>
+
+<div class="expense-container">
+
+
+    <!-- HEADER -->
+
+    <div class="page-header">
+
+        <h1>PRM</h1>
+
+        <h2>Expense Category Master</h2>
+
+        <p>
+            Pathematic Residence Management
+        </p>
+
+    </div>
+
+
+    <!-- FORM -->
+
+    <div class="form-section">
+
+        <h3>Expense Category Details</h3>
+
+
+        <div class="form-grid">
+
+
+            <!-- CATEGORY CODE -->
+
+            <div class="form-group">
+
+                <label for="categoryCode">
+                    Category Code
+                </label>
+
+                <input
+                    type="text"
+                    id="categoryCode"
+                    placeholder="Example: EXP001"
+                >
+
+            </div>
+
+
+            <!-- CATEGORY NAME -->
+
+            <div class="form-group">
+
+                <label for="categoryName">
+                    Expense Category
+                </label>
+
+                <input
+                    type="text"
+                    id="categoryName"
+                    placeholder="Example: Electricity"
+                >
+ 
+
+            </div>
+<!-- BILL UPLOAD -->
+
+<div class="form-group">
+
+    <label for="billUpload">
+        📎 Bill Upload
+    </label>
+
+    <input
+        type="file"
+        id="billUpload"
+        accept=".pdf,.jpg,.jpeg,.png"
+    >
+
+    <small>
+        PDF / JPG / JPEG / PNG
+    </small>
+
+</div>
+
+            <!-- DESCRIPTION -->
+
+            <div class="form-group full-width">
+
+                <label for="description">
+                    Description
+                </label>
+
+                <textarea
+                    id="description"
+                    rows="3"
+                    placeholder="Enter description">
+                </textarea>
+
+            </div>
+
+
+            <!-- STATUS -->
+
+            <div class="form-group">
+
+                <label for="status">
+                    Status
+                </label>
+
+                <select id="status">
+
+                    <option value="ACTIVE">
+                        ACTIVE
+                    </option>
+
+                    <option value="INACTIVE">
+                        INACTIVE
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="button-area">
+
+            <button
+                class="save-btn"
+                onclick="saveCategory()">
+
+                SAVE CATEGORY
+
+            </button>
+
+
+            <button
+                class="clear-btn"
+                onclick="clearForm()">
+
+                CLEAR
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- CATEGORY LIST -->
+
+    <div class="list-section">
+
+        <h3>Expense Category List</h3>
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Code</th>
+
+                    <th>Category</th>
+
+                    <th>Description</th>
+
+                    <th>Status</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="categoryTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- BOTTOM BUTTONS -->
+
+    <div class="bottom-buttons">
+
+        <button
+            onclick="window.location.href='masters.html'">
+
+            ← Back to Masters
+
+        </button>
+
+
+        <button
+            onclick="window.location.href='admin-dashboard.html'">
+
+            Admin Dashboard
+
+        </button>
+
+    </div>
+
+
+</div>
+
+
+<script src="expense-category-master.js"></script>
+
+</body>
+
+</html>

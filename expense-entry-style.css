@@ -1,0 +1,542 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    color: #102a56;
+
+    background:
+
+        linear-gradient(
+            rgba(255,255,255,0.82),
+            rgba(255,255,255,0.82)
+        ),
+
+        url("Background Image.png")
+        center/cover fixed no-repeat;
+}
+
+
+.page-container {
+
+    width: 94%;
+
+    max-width: 1500px;
+
+    margin: 25px auto;
+
+}
+
+
+/* ================= HEADER ================= */
+
+.page-header {
+
+    background: rgba(255,255,255,0.95);
+
+    border-radius: 18px;
+
+    padding: 22px 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow:
+        0 4px 18px rgba(0,0,0,0.10);
+
+}
+
+
+.page-header h1 {
+
+    margin: 0;
+
+    font-size: 34px;
+
+}
+
+
+.page-header h2 {
+
+    margin: 3px 0;
+
+}
+
+
+.page-header p {
+
+    margin: 5px 0;
+
+    color: #58718f;
+
+}
+
+
+.page-header button {
+
+    border: none;
+
+    border-radius: 7px;
+
+    padding: 11px 18px;
+
+    background: #555;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+}
+
+
+/* ================= MANAGER INFO ================= */
+
+.manager-info {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin: 20px 0;
+
+}
+
+
+.manager-info div {
+
+    background:
+        rgba(255,255,255,0.95);
+
+    border-radius: 15px;
+
+    padding: 18px 22px;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,0.10);
+
+}
+
+
+.manager-info span {
+
+    display: block;
+
+    color: #58718f;
+
+    margin-bottom: 8px;
+
+}
+
+
+.manager-info strong {
+
+    font-size: 20px;
+
+}
+
+
+/* ================= CARDS ================= */
+
+.form-card,
+.history-card {
+
+    background:
+        rgba(255,255,255,0.95);
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 4px 18px rgba(0,0,0,0.10);
+
+}
+
+
+.form-card h2,
+.history-card h2 {
+
+    margin-top: 0;
+
+    color: #075fc1;
+
+}
+
+
+/* ================= FORM ================= */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 18px 24px;
+
+}
+
+
+.field {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.field.full {
+
+    grid-column: 1 / -1;
+
+}
+
+
+.field label {
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+
+    color: #111;
+
+}
+
+
+.field input,
+.field select {
+
+    padding: 12px 14px;
+
+    border: 1px solid #c7c7c7;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    background: white;
+
+}
+
+
+/* ================= BUTTONS ================= */
+
+.button-row {
+
+    margin-top: 22px;
+
+    display: flex;
+
+    gap: 14px;
+
+}
+
+
+.save-btn,
+.clear-btn {
+
+    border: none;
+
+    border-radius: 7px;
+
+    padding: 13px 25px;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.save-btn {
+
+    background: #0869ca;
+
+}
+
+
+.clear-btn {
+
+    background: #777;
+
+}
+
+
+/* ================= HISTORY ================= */
+
+.history-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.history-header p {
+
+    color: #58718f;
+
+}
+
+
+.excel-actions {
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.excel-actions button,
+.upload-button {
+
+    border: none;
+
+    border-radius: 7px;
+
+    padding: 11px 18px;
+
+    background: #1267c9;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+}
+
+
+.upload-button {
+
+    display: inline-block;
+
+}
+
+
+/* ================= SEARCH ================= */
+
+.search {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 15px 0;
+
+    padding: 12px 14px;
+
+    border:
+        1px solid #c7c7c7;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+}
+
+
+/* ================= TABLE ================= */
+
+.table-wrapper {
+
+    overflow-x: auto;
+
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 1050px;
+
+}
+
+
+th {
+
+    background: #0768c9;
+
+    color: white;
+
+    padding: 12px 9px;
+
+}
+
+
+td {
+
+    border: 1px solid #ddd;
+
+    padding: 10px 8px;
+
+    text-align: center;
+
+    color: #222;
+
+}
+
+
+/* ================= EDIT DELETE ================= */
+
+.edit-btn,
+.delete-btn {
+
+    border: none;
+
+    padding: 7px 10px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    margin: 2px;
+
+}
+
+
+.edit-btn {
+
+    background: #f0a000;
+
+    color: white;
+
+}
+
+
+.delete-btn {
+
+    background: #c62828;
+
+    color: white;
+
+}
+
+
+/* ================= EMPTY ================= */
+
+.empty-message {
+
+    display: none;
+
+    text-align: center;
+
+    padding: 25px;
+
+    color: #666;
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:800px) {
+
+    .manager-info,
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .field.full {
+
+        grid-column: auto;
+
+    }
+
+
+    .page-header,
+    .history-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}
+
+
+/* ================= PRINT ================= */
+
+@media print {
+
+    body {
+
+        background: white;
+
+    }
+
+
+    .page-header button,
+    .form-card,
+    .manager-info,
+    .excel-actions,
+    .search,
+    .edit-btn,
+    .delete-btn {
+
+        display: none !important;
+
+    }
+
+
+    .page-container {
+
+        width: 100%;
+
+        margin: 0;
+
+    }
+
+
+    .history-card {
+
+        box-shadow: none;
+
+        padding: 0;
+
+    }
+
+
+    table {
+
+        min-width: 0;
+
+        font-size: 10px;
+
+    }
+
+}

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>PRM - Maintenance Receipt</title>
+
+<link rel="stylesheet"
+      href="maintenance-receipt-style.css">
+
+</head>
+
+<body>
+
+<div class="page-container">
+
+    <div class="header">
+
+        <h1>🧾 Maintenance Receipt</h1>
+
+        <div id="managerInfo"></div>
+
+    </div>
+
+
+    <div class="form-card">
+
+        <form id="maintenanceForm">
+
+
+            <!-- DATE -->
+
+            <div class="form-group">
+
+                <label>Entry Date</label>
+
+                <input
+                    type="date"
+                    id="entryDate"
+                    required
+                >
+
+            </div>
+
+
+            <!-- APARTMENT -->
+
+            <div class="form-group">
+
+                <label>Apartment</label>
+
+                <select
+                    id="apartmentId"
+                    required
+                >
+
+                    <option value="">
+                        Select Apartment
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- FLAT -->
+
+            <div class="form-group">
+
+                <label>Flat Number</label>
+
+                <select
+                    id="flatId"
+                    required
+                >
+
+                    <option value="">
+                        Select Flat
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- RESIDENT -->
+
+            <div class="form-group">
+
+                <label>Resident</label>
+
+                <select
+                    id="residentId"
+                    required
+                >
+
+                    <option value="">
+                        Select Resident
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- PREVIOUS OUTSTANDING -->
+
+            <div class="form-group">
+
+                <label>Previous Outstanding</label>
+
+                <input
+                    type="number"
+                    id="previousOutstanding"
+                    value="0"
+                    readonly
+                >
+
+            </div>
+
+
+            <!-- CURRENT MAINTENANCE -->
+
+            <div class="form-group">
+
+                <label>Maintenance Amount</label>
+
+                <input
+                    type="number"
+                    id="maintenanceAmount"
+                    value="0"
+                    readonly
+                >
+
+            </div>
+
+
+            <!-- OTHER CHARGES -->
+
+            <div class="form-group">
+
+                <label>Other Charges</label>
+
+                <input
+                    type="number"
+                    id="otherCharges"
+                    value="0"
+                    readonly
+                >
+
+            </div>
+
+
+            <!-- TOTAL -->
+
+            <div class="form-group">
+
+                <label>Total Due</label>
+
+                <input
+                    type="number"
+                    id="totalDue"
+                    value="0"
+                    readonly
+                >
+
+            </div>
+
+
+            <!-- AMOUNT COLLECTED -->
+
+            <div class="form-group">
+
+                <label>Amount Collected</label>
+
+                <input
+                    type="number"
+                    id="amountCollected"
+                    value="0"
+                    min="0"
+                    required
+                >
+
+            </div>
+
+
+            <!-- BALANCE -->
+
+            <div class="form-group">
+
+                <label>Closing Outstanding</label>
+
+                <input
+                    type="number"
+                    id="closingOutstanding"
+                    value="0"
+                    readonly
+                >
+
+            </div>
+
+
+            <!-- PAYMENT MODE -->
+
+            <div class="form-group">
+
+                <label>Payment Mode</label>
+
+                <select id="paymentMode">
+
+                    <option value="CASH">
+                        Cash
+                    </option>
+
+                    <option value="BANK">
+                        Bank
+                    </option>
+
+                    <option value="UPI">
+                        UPI
+                    </option>
+
+                    <option value="CHEQUE">
+                        Cheque
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- REFERENCE -->
+
+            <div class="form-group">
+
+                <label>Reference / Receipt No.</label>
+
+                <input
+                    type="text"
+                    id="referenceNo"
+                    placeholder="Enter reference number"
+                >
+
+            </div>
+
+
+            <!-- REMARKS -->
+
+            <div class="form-group">
+
+                <label>Remarks</label>
+
+                <textarea
+                    id="remarks"
+                    rows="3"
+                ></textarea>
+
+            </div>
+
+
+            <div class="button-row">
+
+                <button
+                    type="submit"
+                    class="save-button"
+                >
+                    Save Receipt
+                </button>
+<button
+    type="button"
+    class="excel-button"
+    onclick="downloadMaintenanceExcel()"
+>
+    📥 Download Excel
+</button>
+
+<button
+    type="button"
+    class="excel-button"
+    onclick="document.getElementById('excelUpload').click()"
+>
+    📤 Upload Excel
+</button>
+
+<input
+    type="file"
+    id="excelUpload"
+    accept=".xlsx,.xls"
+    style="display:none"
+    onchange="uploadMaintenanceExcel(event)"
+>
+
+                <button
+                    type="button"
+                    onclick="window.location.href='manager-dashboard.html'"
+                    class="back-button"
+                >
+                    Back
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+    </div>
+
+
+    <!-- ======================================== -->
+    <!-- MAINTENANCE RECEIPT HISTORY -->
+    <!-- ======================================== -->
+
+    <div class="history-card">
+
+        <div class="history-header">
+
+            <h2>📋 Maintenance Receipt History</h2>
+
+            <input
+                type="text"
+                id="historySearch"
+                placeholder="Search Receipt No., Flat or Resident..."
+            >
+
+        </div>
+
+
+        <div class="history-table-container">
+
+            <table class="history-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Date</th>
+                        <th>Receipt No.</th>
+                        <th>Flat</th>
+                        <th>Resident</th>
+                        <th>Total Due</th>
+                        <th>Collected</th>
+                        <th>Balance</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="historyTableBody">
+
+                    <!-- History will load here -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<script src="maintenance-receipt.js"></script>
+</div>
+
+
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+
+<script src="maintenance-receipt.js"></script>
+
+</body>
+
+</html>

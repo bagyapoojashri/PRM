@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PRM - Apartment Master</title>
+
+    <link rel="stylesheet"
+          href="apartment-master-style.css">
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+</head>
+
+
+<body>
+
+    <div class="apartment-container">
+
+        <!-- HEADER -->
+
+        <div class="page-header">
+
+            <h1>PRM</h1>
+
+            <h2>Apartment Master</h2>
+
+            <p>
+                Pathematic Residence Management
+            </p>
+
+        </div>
+
+
+        <!-- APARTMENT FORM -->
+
+        <div class="form-section">
+
+            <h3>Apartment Details</h3>
+
+
+            <div class="form-grid">
+
+
+                <!-- Apartment ID -->
+
+                <div class="form-group">
+
+                    <label for="apartmentId">
+                        Apartment ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="apartmentId"
+                        placeholder="Example: APT001"
+                    >
+
+                </div>
+
+
+                <!-- Apartment Name -->
+
+                <div class="form-group">
+
+                    <label for="apartmentName">
+                        Apartment Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="apartmentName"
+                        placeholder="Enter Apartment Name"
+                    >
+
+                </div>
+
+
+                <!-- Address -->
+
+                <div class="form-group full-width">
+
+                    <label for="address">
+                        Address
+                    </label>
+
+                    <textarea
+                        id="address"
+                        rows="3"
+                        placeholder="Enter complete address">
+                    </textarea>
+
+                </div>
+
+
+                <!-- City -->
+
+                <div class="form-group">
+
+                    <label for="city">
+                        City
+                    </label>
+
+                    <input
+                        type="text"
+                        id="city"
+                        placeholder="Enter City"
+                    >
+
+                </div>
+
+
+                <!-- State -->
+
+                <div class="form-group">
+
+                    <label for="state">
+                        State
+                    </label>
+
+                    <input
+                        type="text"
+                        id="state"
+                        value="Tamil Nadu"
+                    >
+
+                </div>
+
+
+                <!-- Pincode -->
+
+                <div class="form-group">
+
+                    <label for="pincode">
+                        Pincode
+                    </label>
+
+                    <input
+                        type="text"
+                        id="pincode"
+                        maxlength="6"
+                        placeholder="Enter Pincode"
+                    >
+
+                </div>
+
+
+                <!-- Contact Person -->
+
+                <div class="form-group">
+
+                    <label for="contactPerson">
+                        Contact Person
+                    </label>
+
+                    <input
+                        type="text"
+                        id="contactPerson"
+                        placeholder="Association / Manager"
+                    >
+
+                </div>
+
+
+                <!-- Contact Number -->
+
+                <div class="form-group">
+
+                    <label for="contactNumber">
+                        Contact Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="contactNumber"
+                        maxlength="10"
+                        placeholder="Enter Mobile Number"
+                    >
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter Email"
+                    >
+
+                </div>
+
+
+                <!-- Status -->
+
+                <div class="form-group">
+
+                    <label for="status">
+                        Status
+                    </label>
+
+                    <select id="status">
+
+                        <option value="ACTIVE">
+                            ACTIVE
+                        </option>
+
+                        <option value="INACTIVE">
+                            INACTIVE
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="button-area">
+
+                <button
+                    class="save-btn"
+                    onclick="saveApartment()">
+
+                    SAVE APARTMENT
+
+                </button>
+
+
+                <button
+                    class="clear-btn"
+                    onclick="clearForm()">
+
+                    CLEAR
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- APARTMENT LIST -->
+
+        <div class="list-section">
+            <div class="excel-actions">
+
+    <button
+        type="button"
+        onclick="downloadPRMExcel(
+            'prmApartments',
+            'PRM_Apartments.xlsx',
+            'Residents'
+        )">
+
+        📥 Download Excel
+
+    </button>
+
+
+    <label class="upload-button">
+
+        📤 Upload Excel
+
+        <input
+            type="file"
+            type="button"
+            accept=".xlsx,.xls"
+            onchange="up
+            loadPRMExcel(
+                event,
+                'prmResidents'
+            )"
+            hidden
+        >
+
+    </label>
+
+</div>
+
+            <h3>
+                Apartment List
+            </h3>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Apartment ID</th>
+
+                        <th>Apartment Name</th>
+
+                        <th>City</th>
+
+                        <th>Contact</th>
+
+                        <th>Status</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="apartmentTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- BACK -->
+
+        <div class="bottom-buttons">
+
+            <button
+                onclick="window.location.href='masters.html'">
+
+                ← Back to Masters
+
+            </button>
+
+
+            <button
+                onclick="window.location.href='admin-dashboard.html'">
+
+                Admin Dashboard
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="prm-excel.js"></script>
+    <script src="apartment-master.js"></script>
+
+</body>
+
+</html>

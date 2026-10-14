@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PRM - Other Entry</title>
+
+    <link rel="stylesheet" href="other-entry-style.css">
+</head>
+
+<body>
+
+<div class="page-container">
+
+    <!-- HEADER -->
+
+    <header class="page-header">
+
+        <div>
+            <h1>PATHEMATIC</h1>
+            <h2>RESIDENCE MANAGEMENT</h2>
+            <p>PRM - Other Entry</p>
+            <p id="apartmentAddressDisplay">
+    -
+</p>
+        </div>
+
+        <button
+            type="button"
+            onclick="goDashboard()">
+            ⬅ Dashboard
+        </button>
+
+    </header>
+
+
+    <!-- MANAGER INFORMATION -->
+
+    <section class="manager-info">
+
+        <div>
+            <span>Manager ID</span>
+            <strong id="managerId">-</strong>
+        </div>
+
+        <div>
+            <span>Apartment Management ID</span>
+            <strong id="apartmentIdDisplay">-</strong>
+        </div>
+
+        <div>
+            <span>Apartment</span>
+            <strong id="apartmentNameDisplay">-</strong>
+        </div>
+
+    </section>
+
+
+    <!-- OTHER ENTRY FORM -->
+
+    <section class="form-card">
+
+        <h2 id="formTitle">
+            Other Entry
+        </h2>
+
+
+        <form id="otherEntryForm">
+
+            <div class="form-grid">
+
+
+                <!-- DATE -->
+
+                <div class="field">
+
+                    <label for="entryDate">
+                        Entry Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="entryDate"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- ENTRY TYPE -->
+
+                <div class="field">
+
+                    <label for="entryType">
+                        Entry Type
+                    </label>
+
+                    <select
+                        id="entryType"
+                        required
+                    >
+
+                        <option value="">
+                            Select Entry Type
+                        </option>
+
+                        <option value="INCOME">
+                            Other Income
+                        </option>
+
+                        <option value="PAYMENT">
+                            Other Payment
+                        </option>
+
+                        <option value="RECEIPT">
+                            Receipt
+                        </option>
+
+                        <option value="ADJUSTMENT">
+                            Adjustment
+                        </option>
+
+                        <option value="OTHER">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- CATEGORY -->
+
+                <div class="field">
+
+                    <label for="entryCategory">
+                        Category
+                    </label>
+
+                    <input
+                        type="text"
+                        id="entryCategory"
+                        placeholder="Enter category"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- AMOUNT -->
+
+                <div class="field">
+
+                    <label for="amount">
+                        Amount
+                    </label>
+
+                    <input
+                        type="number"
+                        id="amount"
+                        min="0"
+                        step="0.01"
+                        placeholder="Enter amount"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="field full">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <input
+                        type="text"
+                        id="description"
+                        placeholder="Enter description"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PAYMENT MODE -->
+
+                <div class="field">
+
+                    <label for="paymentMode">
+                        Payment Mode
+                    </label>
+
+                    <select
+                        id="paymentMode"
+                    >
+
+                        <option value="">
+                            Select Payment Mode
+                        </option>
+
+                        <option value="CASH">
+                            Cash
+                        </option>
+
+                        <option value="BANK">
+                            Bank
+                        </option>
+
+                        <option value="UPI">
+                            UPI
+                        </option>
+
+                        <option value="CHEQUE">
+                            Cheque
+                        </option>
+
+                        <option value="OTHER">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- REFERENCE -->
+
+                <div class="field">
+
+                    <label for="referenceNo">
+                        Reference No.
+                    </label>
+
+                    <input
+                        type="text"
+                        id="referenceNo"
+                        placeholder="Bill / UTR / Cheque No."
+                    >
+
+                </div>
+
+
+<!-- BILL UPLOAD -->
+<div class="field">
+    <label for="billUpload">Upload Bill / Supporting Document</label>
+    <input
+        type="file"
+        id="billUpload"
+        accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+    >
+    <small>PDF, JPG, JPEG or PNG. Maximum 2 MB.</small>
+</div>
+
+                <!-- REMARKS -->
+
+                <div class="field full">
+
+                    <label for="remarks">
+                        Remarks
+                    </label>
+
+                    <textarea
+                        id="remarks"
+                        rows="3"
+                        placeholder="Enter remarks"
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="button-row">
+
+                <button
+                    type="submit"
+                    class="save-btn"
+                    id="saveOtherButton"
+                >
+                    SAVE ENTRY
+                </button>
+
+
+                <button
+                    type="button"
+                    class="clear-btn"
+                    onclick="clearOtherForm()"
+                >
+                    CLEAR
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- HISTORY -->
+
+    <section class="history-card">
+
+        <div class="history-header">
+
+            <div>
+
+                <h2>
+                    Other Entry History
+                </h2>
+
+                <p>
+                    Entries recorded for your assigned apartment
+                </p>
+
+            </div>
+
+
+            <div class="excel-actions">
+
+                <button
+                    type="button"
+                    onclick="downloadOtherExcel()"
+                >
+                    📥 Download Excel
+                </button>
+
+
+                <label class="upload-button">
+
+                    📤 Upload Excel
+
+                    <input
+                        type="file"
+                        accept=".xlsx,.xls"
+                        onchange="uploadOtherExcel(event)"
+                        hidden
+                    >
+
+                </label>
+
+
+                <button
+                    type="button"
+                    onclick="window.print()"
+                >
+                    🖨 Print
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <input
+            type="text"
+            class="search"
+            id="historySearch"
+            placeholder="Search entry..."
+            oninput="displayOtherHistory()"
+        >
+
+
+        <!-- TABLE -->
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>S.No</th>
+
+                        <th>Entry ID</th>
+
+                        <th>Date</th>
+
+                        <th>Type</th>
+
+                        <th>Category</th>
+
+                        <th>Description</th>
+
+                        <th>Amount</th>
+
+                        <th>Payment Mode</th>
+
+                        <th>Reference</th>
+
+                        <th>Entered By</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody
+                    id="otherHistoryBody">
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div
+            id="emptyHistory"
+            class="empty-message">
+
+            No other entries found.
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- EXCEL LIBRARY -->
+
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="other-entry.js"></script>
+
+</body>
+
+</html>

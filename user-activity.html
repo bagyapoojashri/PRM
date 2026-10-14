@@ -1,0 +1,175 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PRM - User Activity</title>
+
+    <link rel="stylesheet"
+          href="user-activity-style.css">
+
+</head>
+
+<body>
+
+<div class="activity-container">
+
+    <!-- HEADER -->
+
+    <div class="page-header">
+
+        <h1>PRM</h1>
+
+        <h2>User Activity</h2>
+
+        <p>
+            Pathematic Residence Management
+        </p>
+
+    </div>
+
+
+    <!-- FILTER -->
+
+    <div class="filter-section">
+
+        <div class="filter-group">
+
+            <label>
+                Manager
+            </label>
+
+            <select id="managerFilter">
+
+                <option value="ALL">
+                    All Managers
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="filter-group">
+
+            <label>
+                Activity
+            </label>
+
+            <select id="activityFilter">
+
+                <option value="ALL">
+                    All Activities
+                </option>
+
+                <option value="LOGIN">
+                    Login
+                </option>
+
+                <option value="LOGOUT">
+                    Logout
+                </option>
+
+                <option value="MAINTENANCE">
+                    Maintenance Receipt
+                </option>
+
+                <option value="EXPENSE">
+                    Expense Entry
+                </option>
+
+                <option value="MASTER">
+                    Master Change
+                </option>
+
+                <option value="ACCESS">
+                    Access Change
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            onclick="filterActivity()">
+
+            FILTER
+
+        </button>
+
+
+        <button
+            onclick="clearFilter()"
+            class="clear-btn">
+
+            CLEAR
+
+        </button>
+
+    </div>
+
+
+    <!-- ACTIVITY TABLE -->
+
+    <div class="table-section">
+
+        <h3>Activity Log</h3>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Date & Time</th>
+
+                    <th>Username</th>
+
+                    <th>Apartment</th>
+
+                    <th>Activity</th>
+
+                    <th>Description</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="activityTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- BOTTOM -->
+
+    <div class="bottom-buttons">
+
+        <button
+            onclick="window.location.href='admin-dashboard.html'">
+
+            ← Admin Dashboard
+
+        </button>
+
+    </div>
+
+
+</div>
+
+
+<script src="user-activity.js"></script>
+
+</body>
+
+</html>
